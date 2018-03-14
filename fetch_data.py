@@ -7,6 +7,18 @@ html = response_IGSM.read()
 soup = BeautifulSoup(html,'html.parser')
 print soup.get_text()	
 
+def cleaner(semiclean, songname):
+	startlyric = 'Queen Lyrics
 
 
+
+
+	"%s"' % (songname)
+
+	stoplyric = "if  ("
+
+	
+	pass
+
+tomato = str(soup.get_text())
 
