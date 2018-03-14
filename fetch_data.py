@@ -1,5 +1,7 @@
 import urllib2
-from bs4 import BeautifulSoup	
+from bs4 import BeautifulSoup
+import re
+
 
 def cleaner(link, songname):
 	response_IGSM = urllib2.urlopen('%s' % (link))
@@ -7,10 +9,12 @@ def cleaner(link, songname):
 	soup = BeautifulSoup(html,'html.parser')
 	tomato = str(soup.get_text())
 	print tomato
+	
+
+
 	startlyric = 'Queen Lyrics "%s"' % (songname)
 
 	stoplyric = "if  ("
-
 
 
 	pass
