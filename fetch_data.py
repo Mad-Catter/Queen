@@ -1,24 +1,19 @@
 import urllib2
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup	
 
-
-response_IGSM = urllib2.urlopen('https://www.azlyrics.com/lyrics/queen/imgoingslightlymad.html')
-html = response_IGSM.read()
-soup = BeautifulSoup(html,'html.parser')
-print soup.get_text()	
-
-def cleaner(semiclean, songname):
-	startlyric = 'Queen Lyrics
-
-
-
-
-	"%s"' % (songname)
+def cleaner(link, songname):
+	response_IGSM = urllib2.urlopen('%s' % (link))
+	html = response_IGSM.read()
+	soup = BeautifulSoup(html,'html.parser')
+	tomato = str(soup.get_text())
+	print tomato
+	startlyric = 'Queen Lyrics "%s"' % (songname)
 
 	stoplyric = "if  ("
 
-	
+
+
 	pass
 
-tomato = str(soup.get_text())
 
+cleaner("https://www.azlyrics.com/lyrics/queen/imgoingslightlymad.html","I'm Going Slightly Mad")
