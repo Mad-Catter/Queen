@@ -12,7 +12,12 @@ def cleaner(link, songname):
 	
 
 
-	startlyric = 'Queen Lyrics "%s"' % (songname)
+	startlyric = '''Queen Lyrics
+
+
+
+
+	 "%s"''' % (songname)
 
 	stoplyric = "if  ("
 
