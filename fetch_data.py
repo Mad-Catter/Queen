@@ -17,9 +17,16 @@ def cleaner(link, songname):
 
 
 
-	 "%s"''' % (songname)
+"%s"''' % (songname)
 
-	stoplyric = "if  ("
+	stoplyric = "if  \("
+
+	normie = re.compile(r"%s[.|\s]+ %s" % (startlyric, stoplyric))
+	norm_match = normie.finditer(tomato)
+	for match in norm_match:
+		print match
+	print normie
+	print(r"%s[.|\s]+ %s" % (startlyric, stoplyric))
 
 
 	pass
