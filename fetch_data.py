@@ -12,19 +12,19 @@ def cleaner(link, songname):
 	
 
 
-	startlyric = '''Queen Lyrics
-
-
-
-
-"%s"''' % (songname)
+	startlyric = '"%s" lyrics' % (songname)
 
 	stoplyric = "if  \("
 
 	normie = re.compile(r"%s[.|\s]+ %s" % (startlyric, stoplyric))
 	norm_match = normie.finditer(tomato)
 	for match in norm_match:
-		print match
+		print match.group(0)
+	print norm_match
+
+	pray = re.search(r'%s' % (stoplyric), tomato)
+	if pray:
+		print pray.group(0)
 	print normie
 	print(r"%s[.|\s]+ %s" % (startlyric, stoplyric))
 
@@ -32,4 +32,4 @@ def cleaner(link, songname):
 	pass
 
 
-cleaner("https://www.azlyrics.com/lyrics/queen/imgoingslightlymad.html","I'm Going Slightly Mad")
+cleaner("https://www.azlyrics.com/lyrics/queen/imgoingslightlymad.html","I\'m Going Slightly Mad")
