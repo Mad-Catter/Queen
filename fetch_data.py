@@ -8,7 +8,6 @@ def cleaner(link, songname):
 	link_opener = link_finder.read()
 	soup = BeautifulSoup(link_opener,'html.parser')
 	semi_clean = str(soup.get_text())
-	print semi_clean
 	startlyric = '"%s" lyrics' % (songname)
 
 	stoplyric = """
