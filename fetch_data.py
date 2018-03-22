@@ -14,7 +14,7 @@ def cleaner(link, songname):
 	stoplyric = """
 
 """
-	pray = re.search(r'%s[a-z|\s|A-Z|\"|\'|\-|\?|!|\,|\.]+%s' % (startlyric,stoplyric), semi_clean)
+	pray = re.search(r'%s[a-z|\s|A-Z|\"|\'|\-|\?|!|\,|\.|\(|\)]+%s' % (startlyric,stoplyric), semi_clean)
 	if pray:
 		print pray.group(0)
 	else:
