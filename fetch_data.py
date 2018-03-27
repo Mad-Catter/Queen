@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import re
 
 
-def cleaner(link, songname):
+def cleaner(link, songname, compiledsong):
 	#The link finder through semi_clean I basically just ripped off of the Beautiful Soup webpage.
 	link_finder = urllib2.urlopen('%s' % (link))
 	link_opener = link_finder.read()
@@ -21,7 +21,9 @@ def cleaner(link, songname):
 	#lines that signify the end of the song.
 	pray = re.search(r'%s[a-z|\s|A-Z|\d|\"|\'|\-|\?|!|\,|\.|\(|\)|\[|\]|\{|\}|\—|ë]+%s' % (startlyric,stoplyric), semi_clean)
 	if pray:
-		print pray.group(0)
+		#print pray.group(0)
+		zlines = '%s' % pray.group(0)
+		compiledsong.append(zlines)
 	else:
 		print("No match")
 	pass
