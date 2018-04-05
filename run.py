@@ -15,6 +15,11 @@ cleaner("https://www.azlyrics.com/lyrics/queen/bohemianrhapsody.html","Bohemian 
 cleaner("https://www.azlyrics.com/lyrics/queen/anotheronebitesthedust.html", "Another One Bites The Dust", songs)
 victory = MarkovChain()
 for song in songs:
+	i =0
 	victory.add_string(str(songs))
-	print victory.generate_text(200)
+	print victory.generate_text(360)
+	while i < 360:
+		print(" ".join(victory[i:i +5]))
+		i +=6
+
 
