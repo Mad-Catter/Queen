@@ -1,5 +1,6 @@
 from markov_python.cc_markov import MarkovChain
 from fetch_data import cleaner
+import re
 
 songs = []
 
@@ -17,9 +18,9 @@ victory = MarkovChain()
 for song in songs:
 	i =0
 	victory.add_string(str(songs))
-	print victory.generate_text(360)
+	mc = victory.generate_text(360)
 	while i < 360:
-		print(" ".join(victory[i:i +5]))
-		i +=6
-
-
+		lasso =" ".join(mc[i:i +6])
+		i +=7
+		lasso = str(lasso)
+		print lasso.replace("\\n"," ").replace("\\'","'").replace("\\r","").replace("queen lyrics","").replace("lyrics","")
